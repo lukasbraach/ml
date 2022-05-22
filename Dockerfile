@@ -9,8 +9,8 @@ ARG PATH="/opt/miniconda/bin:${PATH}"
 ENV TZ=Europe/Berlin
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update -y && \
-    apt-get upgrade && \
-    unminimize && \
+    apt-get upgrade -y && \
+    unminimize -y && \
     apt-get install -y sudo curl less nano htop nload screen
 
 
