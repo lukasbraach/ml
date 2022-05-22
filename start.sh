@@ -53,6 +53,7 @@ if [ "$AMOUNT_CONTAINERS" -eq 0 ]; then
     --mount type=bind,source="$WORK_DIR",target=/opt/work \
     --mount type=bind,source="/srv/datasets",target=/opt/data \
     --network host \
+    --shm-size=172gb \
     "$IMAGE" &>/dev/null
 fi
 
