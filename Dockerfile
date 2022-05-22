@@ -29,5 +29,3 @@ RUN mamba init
 USER root
 RUN rm /opt/miniconda.sh
 USER ${USER}
-
-ENTRYPOINT ["/bin/bash"]

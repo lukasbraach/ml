@@ -74,7 +74,7 @@ fi
 
 echo "Connecting to the running container..."
 echo ""
-docker exec -e NVIDIA_VISIBLE_DEVICES="$USE_GPUS" -it "$CONTAINER_NAME"
+docker exec -e NVIDIA_VISIBLE_DEVICES="$USE_GPUS" -it "$CONTAINER_NAME" /bin/bash
 echo ""
 
 AMOUNT_PS_LINES=$(docker top "$CONTAINER_NAME" -e | wc -l)
