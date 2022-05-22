@@ -77,9 +77,9 @@ echo ""
 docker exec -e NVIDIA_VISIBLE_DEVICES="$USE_GPUS" -it "$CONTAINER_NAME" /bin/bash
 echo ""
 
-AMOUNT_PS_LINES=$(docker top "$CONTAINER_NAME" -e | grep -c bash)
+AMOUNT_PS_LINES=$(docker top "$CONTAINER_NAME" -e | wc -l)
 
-if [ "$AMOUNT_PS_LINES" -le 1 ]; then
+if [ "$AMOUNT_PS_LINES" -le 2 ]; then
   #
   # stopping the container if no user processes are running anymore.
   #
